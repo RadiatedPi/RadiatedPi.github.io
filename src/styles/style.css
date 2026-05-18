@@ -21,11 +21,13 @@ body {
 /* Elementos decorativos de fondo removidos por feedback */
 
 @keyframes pulse {
+
   0%,
   100% {
     transform: scale(1);
     opacity: 0.1;
   }
+
   50% {
     transform: scale(1.05);
     opacity: 0.15;
@@ -277,13 +279,40 @@ main a {
 
 
 /* VRChat Embed */
-.vrchat-embed {
+#vrchat-embed {
   text-align: center;
+  align-items: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
   margin: 5px 0 5px;
+  height: 150px;
 }
 
-.vrchat-embed a {
+#vrchat-card:hover {
+  transform: scale(1.05);
+}
+
+#vrchat-card {
   transition: transform 0.2s;
+  width: 250px;
+  height: 150px;
+  position: absolute;
+  margin: auto;
+}
+
+
+#vrchat-link {
+  z-index: 10;
+}
+
+#vrchat-link,
+#vrchat-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 
@@ -302,6 +331,7 @@ main a {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
 
 .video-container {
   backdrop-filter: blur(20px);
@@ -391,12 +421,15 @@ main a {
 .debian {
   background: #d70751;
 }
+
 .tux {
   background: #0ea5e9;
 }
+
 .debian-dark {
   background: #c41e3a;
 }
+
 .ubuntu {
   background: #e95420;
 }

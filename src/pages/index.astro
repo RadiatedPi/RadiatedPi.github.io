@@ -160,17 +160,26 @@ import '../styles/style.css';
         </a>
       </main>
 
-
-      <section class="vrchat-embed">
-        <a href="https://vrchat.com/home/user/usr_27e51b3d-7588-4247-840b-5f1f56c20bb1">
-            <img
-              src="https://vrc.dissonant.dev/usr_27e51b3d-7588-4247-840b-5f1f56c20bb1/small.png?foreground_color=FFFFFF"
-              width="250"
-              title="My VRChat status"
-            />
-        </a>
-      </section>
-
+      <div id="vrchat-embed">
+          <div id="vrchat-card">
+            <div id="vrchat-image">
+              <object
+                type="image/svg+xml"
+                data="https://vrc.dissonant.dev/usr_27e51b3d-7588-4247-840b-5f1f56c20bb1/small.svg?foreground_color=FFFFFF"
+                width="250"
+                height="150"
+                title="My VRChat status"
+                style="color-scheme: light;"
+              >
+              </object>
+            </div>
+            <div id="vrchat-link">
+              <a href="https://vrchat.com/home/user/usr_27e51b3d-7588-4247-840b-5f1f56c20bb1" target="_blank">
+                <img src="/src/assets/transparent.png" width="250" height="150" />
+              </a>
+            </div>
+          </div>
+      </div>
 
       <!-- YouTube Section -->
       <section class="youtube-section">
@@ -200,9 +209,6 @@ import '../styles/style.css';
           }
         </script>
       </section>
-
-
-
     </div>
   </body>
 </html>
