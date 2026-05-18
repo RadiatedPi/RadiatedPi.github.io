@@ -275,6 +275,19 @@ main a {
   background-clip: text;
 }
 
+
+/* VRChat Embed */
+.vrchat-embed {
+  text-align: center;
+  margin: 5px 0 5px;
+}
+
+.vrchat-embed a {
+  transition: transform 0.2s;
+}
+
+
+
 /* YouTube Section */
 .youtube-section {
   margin-top: 40px;
