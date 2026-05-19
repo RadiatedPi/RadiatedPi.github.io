@@ -78,8 +78,7 @@ header {
   position: absolute;
   inset: -2px;
   padding: 2px;
-    background: conic-gradient(
-      rgba(255, 0, 0, 1),
+  background: conic-gradient(rgba(255, 0, 0, 1),
       rgba(255, 154, 0, 1),
       rgba(208, 222, 33, 1),
       rgba(79, 220, 74, 1),
@@ -89,8 +88,7 @@ header {
       rgba(95, 21, 242, 1),
       rgba(186, 12, 248, 1),
       rgba(251, 7, 217, 1),
-      rgba(255, 0, 0, 1)
-  );
+      rgba(255, 0, 0, 1));
   animation: rotate 5s linear infinite;
   clip-path: circle(48%);
 }
@@ -517,4 +515,13 @@ main a {
     padding: 5px 10px;
   }
 
+}
+
+.lilypadvr {
+  background-size: contain;
+  background-repeat: no-repeat;
+  fill: white;
+  stroke: white;
+  stroke-width: 9;
+  padding: 3px;
 }
