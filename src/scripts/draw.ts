@@ -31,14 +31,14 @@ export function drawDotsBoard(
       let dotSize = Math.max((easeInExpo(noise) * dotMaxSize) / 2, 0.1);
       ctx.fillStyle = `rgb(from ${darkPrimaryHex} r g b / ${opacity}%)`;
       */
-      let dotSize = 1.25;
+      let dotSize = 1.8;
       const color = noise * 360 * 1.5;
       ctx.fillStyle = `hsla(${color} 100 50 / 60%)`;
 
       if (cursorPos) {
         const cursorRad = 500;
         const dVector = { x: x - cursorPos.x, y: y - cursorPos.y };
-        const hoveredDotMaxSize = dotMaxSize * 0.3;
+        const hoveredDotMaxSize = dotMaxSize * 0.4;
         // 0 ... 1 based on distance to cursor, with negative means out of distance
         const strength = easeInExpo(
           1 - getVectorMagnitude(dVector) / cursorRad
