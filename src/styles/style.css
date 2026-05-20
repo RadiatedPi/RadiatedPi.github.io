@@ -7,9 +7,11 @@
 body {
   font-family: 'Aldrich', sans-serif;
   background: #0a0a0a;
+  /*
   background-image:
     linear-gradient(rgba(49, 46, 129, 0.15) 1px, transparent 1px),
     linear-gradient(90deg, rgba(49, 46, 129, 0.15) 1px, transparent 1px);
+    */
   background-size: 50px 50px;
   color: white;
   min-height: 100vh;
@@ -532,4 +534,15 @@ main a {
   background-repeat: no-repeat;
   fill: white;
   padding: 6px;
+}
+
+#background-canvas {
+    aspect-ratio: initial;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    position: absolute;
+    display: block;
+    left:0px;
+    top:0px
 }
