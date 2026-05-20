@@ -44,7 +44,7 @@ body {
 /* Header */
 header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .profile-image img {
@@ -290,6 +290,7 @@ main a {
   justify-content: center;
   margin: 5px 0 5px;
   height: 150px;
+  margin-bottom: 20px;
 }
 
 #vrchat-card:hover {
@@ -524,4 +525,11 @@ main a {
   stroke: white;
   stroke-width: 9;
   padding: 3px;
+}
+
+.jinxxy {
+  background-size: contain;
+  background-repeat: no-repeat;
+  fill: white;
+  padding: 6px;
 }
