@@ -9,9 +9,9 @@ body {
   background: #0a0a0a;
   /*
   background-image:
-    linear-gradient(rgba(49, 46, 129, 0.15) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(49, 46, 129, 0.15) 1px, transparent 1px);
-    */
+  linear-gradient(rgba(49, 46, 129, 0.15) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(49, 46, 129, 0.15) 1px, transparent 1px);
+  */
   background-size: 50px 50px;
   color: white;
   min-height: 100vh;
@@ -41,6 +41,16 @@ body {
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.glass-backdrop {
+  max-width: 650px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  inset: 0;
 }
 
 /* Header */
@@ -537,12 +547,27 @@ main a {
 }
 
 #background-canvas {
-    aspect-ratio: initial;
-    height: 100%;
-    width: 100%;
-    z-index: 0;
-    position: absolute;
-    display: block;
-    left:0px;
-    top:0px
+  aspect-ratio: initial;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  position: absolute;
+  display: block;
+  left: 0px;
+  top: 0px
+}
+
+#glass {
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  display: block;
+
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px;
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(4.8px);
 }

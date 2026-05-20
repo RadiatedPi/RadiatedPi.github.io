@@ -38,7 +38,7 @@ export function drawDotsBoard(
       if (cursorPos) {
         const cursorRad = 500;
         const dVector = { x: x - cursorPos.x, y: y - cursorPos.y };
-        const hoveredDotMaxSize = dotMaxSize * 0.23;
+        const hoveredDotMaxSize = dotMaxSize * 0.3;
         // 0 ... 1 based on distance to cursor, with negative means out of distance
         const strength = easeInExpo(
           1 - getVectorMagnitude(dVector) / cursorRad
