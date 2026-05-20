@@ -58,7 +58,7 @@ export function drawDotsBoard(
       }
 
       ctx.beginPath();
-      ctx.arc(x - dotSize, y - dotSize, dotSize, 0, Math.PI * 2);
+      ctx.arc(x - 5, y - 5, dotSize, 0, Math.PI * 2);
       ctx.fill();
     }
   }
