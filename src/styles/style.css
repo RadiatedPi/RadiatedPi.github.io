@@ -161,11 +161,12 @@ main {
   gap: 0;
 }
 
+/*
 main a {
   text-decoration: none;
   color: inherit;
   width: 100%;
-}
+}*/
 
 /* Cards Ultra Tecnológicas */
 .card {
@@ -292,6 +293,13 @@ main a {
   background-clip: text;
 }
 
+.social-icon:hover {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.social-icon {
+  transition: transform 0.2s;
+}
 
 /* VRChat Embed */
 #vrchat-embed {
@@ -570,4 +578,9 @@ main a {
   /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(4.8px);
+}
+
+.vrchat-icon {
+  padding: 6px;
+  fill: white;
 }

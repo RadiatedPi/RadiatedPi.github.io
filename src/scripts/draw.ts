@@ -6,6 +6,8 @@ import {
   interpolate,
 } from "../scripts/utils.ts";
 
+let time = 1;
+
 // -- Dots board
 
 export function drawDotsBoard(
@@ -19,10 +21,11 @@ export function drawDotsBoard(
 ) {
   dotMaxSize = dotMaxSize ?? cellSize / 3;
 
+  /*
   const cssComputedStyle = getComputedStyle(ctx.canvas);
   const darkPrimaryHex = cssComputedStyle.getPropertyValue("--dark-primary");
   const bluePrimaryHex = cssComputedStyle.getPropertyValue("--blue-primary");
-
+  */
   for (let y = 0; y < height; y += cellSize) {
     for (let x = 0; x < width; x += cellSize) {
       const noise = getNoise({ x, y }) + 0.1;
@@ -32,7 +35,7 @@ export function drawDotsBoard(
       ctx.fillStyle = `rgb(from ${darkPrimaryHex} r g b / ${opacity}%)`;
       */
       let dotSize = 1.8;
-      const color = noise * 360 * 1.5;
+      const color = noise * 360 * 1.5 + time;
       ctx.fillStyle = `hsla(${color} 100 50 / 60%)`;
 
       if (cursorPos) {
@@ -50,9 +53,8 @@ export function drawDotsBoard(
             /*
             ctx.fillStyle = `rgb(from ${bluePrimaryHex} r g b / ${opacity}%)`;
             */
-            ctx.fillStyle =  `hsla(${color} 100 50 / ${opacity}%)`;
+            ctx.fillStyle = `hsla(${color + opacity*2} 100 50 / ${opacity}%)`;
             dotSize = dotSizeFromCursor;
-
           }
         }
       }
@@ -62,4 +64,5 @@ export function drawDotsBoard(
       ctx.fill();
     }
   }
+  time++;
 }
