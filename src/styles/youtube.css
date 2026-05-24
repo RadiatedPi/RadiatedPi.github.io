@@ -1,0 +1,142 @@
+/* YouTube Section */
+.youtube-section {
+  margin-top: 40px;
+}
+
+.youtube-section h2 {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #f8fafc 0%, #312e81 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+.video-container {
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  padding: 15px;
+}
+
+.video-embed {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.video-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+.video-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.video-title {
+  flex: 1;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.copy-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #f8fafc;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: rgba(49, 46, 129, 0.1);
+  border: 1px solid rgba(49, 46, 129, 0.3);
+  transition: all 0.3s;
+}
+
+.copy-link:hover {
+  color: #fff;
+  background: rgba(49, 46, 129, 0.2);
+  border-color: rgba(79, 70, 229, 0.6);
+  box-shadow: 0 0 20px rgba(49, 46, 129, 0.4);
+  transform: translateY(-2px);
+}
+
+.video-icons {
+  display: none;
+  gap: 15px;
+  margin-top: 15px;
+  justify-content: center;
+}
+
+.video-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-icon img {
+  width: 35px;
+  height: 35px;
+  filter: brightness(1.1);
+}
+
+.debian {
+  background: #d70751;
+}
+
+.tux {
+  background: #0ea5e9;
+}
+
+.debian-dark {
+  background: #c41e3a;
+}
+
+.ubuntu {
+  background: #e95420;
+}
+
+@media (min-width: 768px) {
+  .video-icons {
+    display: flex;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .youtube-section h2 {
+    font-size: 16px;
+  }
+
+  .video-container {
+    padding: 10px;
+  }
+
+  .video-title {
+    font-size: 13px;
+  }
+
+  .copy-link {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+}

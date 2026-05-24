@@ -1,0 +1,209 @@
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.card {
+  border-radius: 17px;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 25px;
+  place-content: center;
+  display: block;
+  position: relative;
+  text-align: center;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card .icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, rgba(49, 46, 129, 0.2) 0%, rgba(30, 41, 59, 0.2) 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  flex-shrink: 0;
+  border: 2px solid rgba(49, 46, 129, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:
+    0 4px 20px rgba(49, 46, 129, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+.card .icon img {
+  width: 37px;
+  height: 37px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.5));
+  transition: filter 0.3s;
+}
+
+.card:hover {
+  transform: translate(3px, 3px);
+}
+
+.card:hover .icon {
+  transform: scale(1.15) rotate(5deg);
+  background: linear-gradient(135deg, rgba(49, 46, 129, 0.3) 0%, rgba(30, 41, 59, 0.3) 100%);
+  border-color: rgba(79, 70, 229, 0.6);
+  box-shadow:
+    0 6px 30px rgba(49, 46, 129, 0.6),
+    0 0 40px rgba(30, 41, 59, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.card:hover .icon::before {
+  opacity: 0.5;
+  background: linear-gradient(135deg, #1e293b, #312e81, #1e293b);
+  animation: rotate 2s linear infinite;
+}
+
+.card:hover .icon img {
+  filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.8)) brightness(1.2);
+}
+
+.card-outline,
+.card-solid-outline {
+  position: absolute;
+  width: anchor-size(--card-anchor width);
+  height: anchor-size(--card-anchor height);
+  border-radius: 15px;
+
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  place-content: center;
+}
+
+.card-solid-outline,
+.card:hover .card-outline {
+  opacity: 1;
+}
+
+.card-outline,
+.card:hover .card-solid-outline {
+  opacity: 0;
+}
+
+.card-solid-outline::after,
+.card-outline::before,
+.card-outline::after {
+  --d: 500px;
+  --angle: 100deg;
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 17px;
+  padding: 2px;
+}
+
+.card-solid-outline::after {
+  background: #d8d8d8;
+}
+
+.card-outline::before,
+.card-outline::after {
+  background: repeating-linear-gradient(var(--angle),
+      rgba(255, 0, 0, 1),
+      rgba(255, 154, 0, 1),
+      rgba(208, 222, 33, 1),
+      rgba(79, 220, 74, 1),
+      rgba(63, 218, 216, 1),
+      rgba(47, 201, 226, 1),
+      rgba(28, 127, 238, 1),
+      rgba(95, 21, 242, 1),
+      rgba(186, 12, 248, 1),
+      rgba(251, 7, 217, 1),
+      rgba(255, 0, 0, 1) var(--d));
+  background-size: calc(var(--d)/sin(var(--angle))) 100%;
+  animation: LinearScroll 4s linear infinite reverse;
+}
+
+.card-outline::before {
+  filter: blur(.5rem);
+}
+
+.card-background {
+  position: relative;
+  anchor-name: --card-anchor;
+  background: #1a1a1a;
+  display: grid;
+  grid-template-columns: 56px 1fr 56px;
+  align-items: center;
+  gap: 24px;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border-radius: 15px;
+  opacity: 0.99;
+  z-index: 1;
+}
+
+.card-content {
+  text-align: center;
+  grid-column: 2;
+}
+
+.card h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s;
+}
+
+.card:hover h2 {
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 1px;
+}
+
+.card p {
+  font-size: 12px;
+  color: #aaa;
+  transition: color 0.3s;
+  line-height: 1.5;
+}
+
+.card:hover p {
+  color: #e0e0e0;
+}
+
+@keyframes LinearScroll {
+  0% {
+    background-position: calc(var(--d)/sin(var(--angle))) 0;
+  }
+}
+
+.lilypadvr {
+  background-size: contain;
+  background-repeat: no-repeat;
+  fill: white;
+  stroke: white;
+  stroke-width: 9;
+  padding: 3px;
+}
+
+.jinxxy {
+  background-size: contain;
+  background-repeat: no-repeat;
+  fill: white;
+  padding: 6px;
+}
+
+
+.vrchat-icon {
+  padding: 6px;
+  fill: white;
+}
