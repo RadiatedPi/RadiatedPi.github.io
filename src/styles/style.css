@@ -189,7 +189,7 @@ main a {
 .card {
 
   border-radius: 17px;
-  height: 85px;
+  height: 100%;
   width: 100%;
   margin-bottom: 25px;
   align-items: center;
@@ -198,6 +198,7 @@ main a {
   position: relative;
   text-align: center;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 3px solid #f8fafc;
 }
 
 .card-outline {
@@ -673,7 +674,7 @@ main a {
   /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(4.8px);
-  border: 2px solid #f8fafc;
+  border: 3px solid #f8fafc;
 }
 
 .vrchat-icon {
