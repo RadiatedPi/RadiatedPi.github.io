@@ -85,7 +85,7 @@ header {
   clip-path: circle(48%);
 }
 
-.profile-image::before {
+.profile-image::before, .profile-image::after {
   content: '';
   position: absolute;
   inset: -2px;
@@ -109,6 +109,10 @@ header {
   to {
     transform: rotate(360deg);
   }
+}
+
+.profile-image::before {
+  filter: blur(.5rem);
 }
 
 h1 {
@@ -166,42 +170,125 @@ main a {
   text-decoration: none;
   color: inherit;
   width: 100%;
-}*/
+  }*/
 
 /* Cards Ultra Tecnológicas */
+
+@property --opacity {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@keyframes FadeOutline {
+  100% {
+    --opacity: 1;
+  }
+}
+
 .card {
-  background: #0f172a;
-  border: 2px solid #f8fafc;
-  border-radius: 12px;
-  padding: 16px 20px;
+
+  border-radius: 17px;
+  height: 85px;
+  width: 100%;
   margin-bottom: 25px;
+  align-items: center;
+  justify-content: center;
+  display: block;
+  position: relative;
+  text-align: center;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-outline {
+  position: fixed;
+  width: anchor-size(--card-anchor width);
+  height: anchor-size(--card-anchor height);
+  border-radius: 15px;
+
+  opacity: 0;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display:flex;
+  align-items: center;
+  place-content: center;
+}
+
+.card-outline::before,
+.card-outline::after {
+  --d: 500px;
+  --angle: 100deg;
+  --opacity: 1;
+
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: repeating-linear-gradient(var(--angle),
+      rgba(255, 0, 0, var(--opacity)),
+      rgba(255, 154, 0, var(--opacity)),
+      rgba(208, 222, 33, var(--opacity)),
+      rgba(79, 220, 74, var(--opacity)),
+      rgba(63, 218, 216, var(--opacity)),
+      rgba(47, 201, 226, var(--opacity)),
+      rgba(28, 127, 238, var(--opacity)),
+      rgba(95, 21, 242, var(--opacity)),
+      rgba(186, 12, 248, var(--opacity)),
+      rgba(251, 7, 217, var(--opacity)),
+      rgba(255, 0, 0, var(--opacity)) var(--d));
+  border-radius: 17px;
+  padding: 3px;
+  background-size: calc(var(--d)/sin(var(--angle))) 100%;
+  animation: LinearScroll 4s linear infinite reverse;
+}
+
+.card-outline::before {
+  filter: blur(.5rem);
+}
+
+.card:hover .card-outline {
+  opacity: 1;
+}
+
+
+
+
+.card-background {
+  position: relative;
+  anchor-name: --card-anchor;
+  background: #1a1a1a;
   display: grid;
   grid-template-columns: 56px 1fr 56px;
   align-items: center;
   gap: 24px;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-  position: relative;
   width: 100%;
-  box-shadow: 6px 6px 0px #312e81;
+  height: 100%;
+  padding: 10px;
+  border-radius: 15px;
+  /*border: 2px solid white;*/
+  opacity: 0.99;
 }
 
-/* Efecto neobrutalista sólido (removidos efectos cyan antiguos) */
-.card:hover::before {
-  display: none;
-}
-
-.card:hover::after {
-  display: none;
+@keyframes LinearScroll {
+  0% {
+    background-position: calc(var(--d)/sin(var(--angle))) 0;
+  }
 }
 
 .card:hover {
   transform: translate(3px, 3px);
-  box-shadow: 3px 3px 0px #312e81;
-  border-color: #312e81;
-  background: #1e293b;
+  /*animation:  FadeOutline .2s linear;*/
 }
 
+
+
+/* Efecto neobrutalista sólido (removidos efectos cyan antiguos) */
+/*
+.card:hover {
+  box-shadow: 3px 3px 0px #312e81;
+  border-color: #312e81;
+}
+*/
 .card .icon {
   width: 56px;
   height: 56px;
@@ -219,6 +306,7 @@ main a {
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
   position: relative;
 }
+
 
 .card .icon img {
   width: 37px;
@@ -282,6 +370,13 @@ main a {
 .card:hover p {
   color: #e0e0e0;
 }
+
+
+
+
+
+
+
 
 .subtítulo {
   font-size: 20px;
@@ -573,14 +668,79 @@ main a {
   display: block;
 
   /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(4.8px);
+  border: 2px solid #f8fafc;
 }
 
 .vrchat-icon {
   padding: 6px;
   fill: white;
+}
+
+.grid-content {
+  margin-bottom: 10px;
+}
+
+.grid-header {
+  margin-top: 10px;
+}
+
+.grid-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+}
+
+.grid-container .grid-content,
+.grid-container .grid-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-content,
+.grid-content div {
+  border: 2px solid rgb(180, 180, 180)
+}
+
+.grid-content div {
+  padding: 5px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.title {
+  font-size: 125%;
+  font-weight: bold;
+}
+
+section {
+  padding: 10px 0 10px 0;
+}
+
+section p {
+  padding: 10px 0 10px 0;
+}
+
+section ul,
+section ol {
+  padding: 0px 0 0px 20px;
+  line-height: 125%;
+}
+
+li {
+  padding: 5px 0 5px 0;
+}
+
+footer {
+  margin-top: 50px;
 }

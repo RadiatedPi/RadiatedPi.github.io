@@ -1,0 +1,204 @@
+---
+import '../styles/style.css';
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relli's Stuff | VRC Price Sheet</title>
+    <link rel="icon" href="/relli_logo_100x100.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/8e4463ebba.js" crossorigin="anonymous"></script>
+    <script src="../scripts/background"></script>
+  </head>
+
+  <!-- Background -->
+  <canvas id="background-canvas" width="600px"></canvas>
+
+  <body>
+    <div class="glass-backdrop">
+      <canvas id="glass"></canvas>
+      <div class="container">
+        <!-- Header -->
+        <header>
+          <h1>THIS SITE IS UNDER CONSTRUCTION</h1>
+          <h1>Custom VRChat Avatar Price Sheet</h1>
+        </header>
+
+        <section>
+          <div class="grid-container">
+            <div class="grid-header">
+              <div class="title">Service</div>
+              <div class="title">Starting Labor Cost (USD)</div>
+            </div>
+            <div class="grid-content">
+              <div>Standard Base Setup</div>
+              <div>~$45 per</div>
+
+              <div>Custom Textures</div>
+              <div>~$20 per</div>
+
+              <div>Blender Edits</div>
+              <div>~$35 per</div>
+
+              <div>From-Scratch Blender Work</div>
+              <div>~$125 per</div>
+
+              <div>Avatar Props</div>
+              <div>~$5 per</div>
+
+              <div>Custom Animations/Toggles</div>
+              <div>~$15 per</div>
+
+              <div>Shader Setup/Config</div>
+              <div>~$20 per</div>
+            </div>
+          </div>
+          <p>
+            *Prices shown are subject to change based on complexity and time demands of requested
+            services.
+          </p>
+        </section>
+
+        <section>
+          <h2><u>Commission Timeline</u></h2>
+          <p>The order of events for getting a commission is as follows:</p>
+          <ol>
+            <li>
+              Commission details are discussed, and an <b>estimated total price</b> is given.
+            </li>
+          </ol>
+          <div style="text-align: center; font-weight: bold; font-size: 110%; padding: 5px 0 15px 0">
+            Est. total price = Est. labor cost + Paid asset costs
+          </div>
+
+          <ol start="2">
+            <li>
+              After the estimated total price is agreed upon, an <b>upfront payment</b> is calculated.
+              <ul>
+                <li>
+                  The initial labor cost is an <u>estimate</u>, and is subject to change as work
+                  progresses.
+                </li>
+              </ul>
+            </li>
+          </ol>
+          <div class="grid-container">
+            <div class="grid-header" style="grid-template-columns: 1fr 2fr;">
+              <div class="title">Est. Labor Cost</div>
+              <div class="title">Upfront Payment</div>
+            </div>
+            <div class="grid-content" style="grid-template-columns: 1fr 2fr;">
+              <div>$0 - $99</div>
+              <div>Full price</div>
+
+              <div>$100+</div>
+              <div>30% of Est. Labor Cost + Asset Costs</div>
+            </div>
+          </div>
+          <ol start="3">
+            <li>
+              After the upfront payment is processed, work on the commission begins.
+              <ul>
+                <li>Turnaround time: <b>~2 weeks</b> once started.</li>
+                <li>
+                  WIP updates will be sent to ensure the commissioner is happy with the final
+                  product.
+                </li>
+                <li>
+                  As major updates are sent, I will take breaks untill I receive a response
+                  confirming everything looks good.
+                </li>
+              </ul>
+            </li>
+            <li>
+              If the commissioner requests large changes or additions, the total price is
+              recalculated to account for extra labor.
+              <ul>
+                <li>
+                  If requests include additional paid assets, assets must be paid for by the
+                  commissioner <u>upfront</u>.
+                </li>
+                <li>
+                  <u>Refunds will not be issued</u> for changes that override work that's already been
+                  done.
+                </li>
+              </ul>
+            </li>
+            <li>
+              Once the commission is complete, the <b>final payment</b> is calculated.
+              <ul></ul>
+            </li>
+          </ol>
+          <div style="text-align: center; font-weight: bold; font-size: 110%; padding: 5px 0 15px 0">
+            Final payment = Final total cost - Upfront payment
+          </div>
+          <ol start="6">
+            <li>
+              After the final payment is processed, the commissioned avatar is uploaded to the
+              commissioner's VRChat account.
+            </li>
+          </ol>
+        </section>
+        
+        <section>
+          <h2><u>General TOS</u></h2>
+          <ul>
+            <li>I retain my right to turn down commissions.</li>
+            <li>All prices advertised are based on USD currency.</li>
+            <li>
+              Feel free to DM me for concerns or order confirmations (please give me up to 24 hours
+              to follow up!).
+            </li>
+          </ul>
+        </section>
+        
+        <section>
+          <h2><u>Enterprise TOS</u></h2>
+          <ul>
+            <li>
+              All products are for personal use only unless a commercial license is purchased.
+            </li>
+            <li>
+              Enterprise licenses are available for purchase after the commission is complete, and
+              are calculated based on the final total cost.
+            </li>
+            <li>Commercial license rates are calculated as follows:</li>
+            <div style="text-align: center; font-weight: bold; font-size: 110%; padding: 5px 0 15px 0">
+              Enterprise license fee = Final total cost * 50%
+            </div>
+          </ul>
+        </section>
+
+        <!--Background Options -->
+        <footer>
+          <div>
+            <input type="checkbox" id="draw-dots" checked />
+            <label for="draw-dots">Draw Dots Board</label>
+
+            <input type="checkbox" id="enable-rotation" checked />
+            <label for="enable-rotation">Enable Animation / Gradients rotation</label>
+
+            <input type="checkbox" id="enable-interaction" checked />
+            <label for="enable-interaction">Enable Interaction</label>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+
+
+</html>
