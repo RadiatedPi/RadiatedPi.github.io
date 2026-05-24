@@ -85,7 +85,8 @@ header {
   clip-path: circle(48%);
 }
 
-.profile-image::before, .profile-image::after {
+.profile-image::before,
+.profile-image::after {
   content: '';
   position: absolute;
   inset: -2px;
@@ -141,21 +142,68 @@ h1 {
 .social-links {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
   gap: 20px;
   max-width: 350px;
   margin: 20px auto 0;
 }
 
-.social-links a {
+.social-icon {
+  height: 100%;
+  align-items: center;
+  place-content: center;
+  display: block;
+  position: relative;
+  text-align: center;
+  
+}
+
+.social-icon a {
   color: white;
   text-decoration: none;
   font-size: 23px;
-  transition: transform 0.2s;
+  align-items: center;
+  place-content: center;
+  position: relative;
+  align-items: center;
+  place-content: center;
 }
+
+
 
 .social-links a:hover {
   transform: scale(1.2);
+}
+
+.social-icon::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: conic-gradient(rgba(255, 0, 0, 1),
+      rgba(255, 154, 0, 1),
+      rgba(208, 222, 33, 1),
+      rgba(79, 220, 74, 1),
+      rgba(63, 218, 216, 1),
+      rgba(47, 201, 226, 1),
+      rgba(28, 127, 238, 1),
+      rgba(95, 21, 242, 1),
+      rgba(186, 12, 248, 1),
+      rgba(251, 7, 217, 1),
+      rgba(255, 0, 0, 1));
+  place-content: center;
+  text-align: center;
+  translate: -100%;
+  transition: all 0.2s;
+  z-index: -1;
+  filter: blur(.5rem);
+  opacity: 0;
+  animation: rotate 5s linear infinite;
+}
+
+.social-icon:hover::after {
+  opacity: 1;
 }
 
 /* Main Cards Container */
@@ -187,43 +235,66 @@ main a {
 }
 
 .card {
-
   border-radius: 17px;
   height: 100%;
   width: 100%;
   margin-bottom: 25px;
-  align-items: center;
-  justify-content: center;
+  place-content: center;
   display: block;
   position: relative;
   text-align: center;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 3px solid #f8fafc;
 }
 
-.card-outline {
-  position: fixed;
+.card-outline,
+.card-solid-outline {
+  position: absolute;
   width: anchor-size(--card-anchor width);
   height: anchor-size(--card-anchor height);
   border-radius: 15px;
 
-  opacity: 0;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  display:flex;
+  display: flex;
   align-items: center;
   place-content: center;
 }
 
+.card-outline {
+  opacity: 0;
+}
+
+.card:hover .card-outline {
+  opacity: 1;
+}
+
+.card-solid-outline {
+  opacity: 1;
+}
+
+.card:hover .card-solid-outline {
+  opacity: 0;
+}
+
+.card-solid-outline::after,
 .card-outline::before,
 .card-outline::after {
   --d: 500px;
   --angle: 100deg;
   --opacity: 1;
-
   content: '';
   position: absolute;
   height: 100%;
   width: 100%;
+  border-radius: 17px;
+  padding: 2px;
+}
+
+.card-solid-outline::after {
+  background: #d8d8d8;
+}
+
+.card-outline::before,
+.card-outline::after {
   background: repeating-linear-gradient(var(--angle),
       rgba(255, 0, 0, var(--opacity)),
       rgba(255, 154, 0, var(--opacity)),
@@ -236,8 +307,6 @@ main a {
       rgba(186, 12, 248, var(--opacity)),
       rgba(251, 7, 217, var(--opacity)),
       rgba(255, 0, 0, var(--opacity)) var(--d));
-  border-radius: 17px;
-  padding: 3px;
   background-size: calc(var(--d)/sin(var(--angle))) 100%;
   animation: LinearScroll 4s linear infinite reverse;
 }
@@ -246,9 +315,6 @@ main a {
   filter: blur(.5rem);
 }
 
-.card:hover .card-outline {
-  opacity: 1;
-}
 
 
 
@@ -268,6 +334,7 @@ main a {
   border-radius: 15px;
   /*border: 2px solid white;*/
   opacity: 0.99;
+  z-index: 1;
 }
 
 @keyframes LinearScroll {
