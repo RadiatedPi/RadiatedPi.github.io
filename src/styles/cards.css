@@ -73,10 +73,10 @@ main {
   height: anchor-size(--card-anchor height);
   border-radius: 15px;
 
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   place-content: center;
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-solid-outline,
