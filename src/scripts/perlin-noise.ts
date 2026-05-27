@@ -34,8 +34,8 @@ export function generateNoise() {
         const gradient = getGradient({ x, y });
         const rotation = gradientsRotation.get(x, y) ?? 0;
         const newRotation = clamp(
-          -Math.PI / 50,
-          Math.PI / 50,
+          -Math.PI / 100,
+          Math.PI / 100,
           rotation + (Math.random() * 2 - 1) * maxRadian
         );
 

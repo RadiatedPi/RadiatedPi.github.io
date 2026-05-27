@@ -1,0 +1,1 @@
+import { fontProviders } from 'astro/config';

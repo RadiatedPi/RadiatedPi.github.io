@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Jura:wght@300..700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +18,7 @@
 }
 
 body {
-  font-family: 'Aldrich', sans-serif;
+  font-family: "Inter", sans-serif;
   background: #0a0a0a;
   /*
   background-image:
@@ -69,8 +71,6 @@ header {
 }
 
 h1 {
-  font-size: 24px;
-  font-weight: 600;
   margin-bottom: 10px;
   background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 50%, #94a3b8 100%);
   -webkit-background-clip: text;
@@ -78,15 +78,24 @@ h1 {
   background-clip: text;
 }
 
+.relli-logo-text {
+  max-width: 100%;
+  background-image: url(/public/relli-gay-text.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+  display: block;
+}
+
+
 .location {
   color: #999;
-  font-size: 14px;
   margin-bottom: 10px;
 }
 
 .description {
   color: #ccc;
-  font-size: 13px;
   margin-bottom: 25px;
 }
 
