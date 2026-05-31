@@ -151,7 +151,8 @@ main {
 }
 
 .card h2 {
-  font-family: "AnnonceW01-Regular", sans-serif;
+  /*font-family: "AnnonceW01-Regular", sans-serif;*/
+  font-family: var(--font-annonce);
   font-size: 17px;
   font-weight: 600;
   margin-bottom: 6px;

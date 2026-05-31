@@ -79,8 +79,9 @@ h1 {
 }
 
 .relli-logo-text {
+  font-family: var(--font-annonce);
   max-width: 100%;
-  background-image: url(/public/relli-gay-text.svg);
+  background-image: url(/relli-gay-text.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
