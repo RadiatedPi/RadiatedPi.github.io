@@ -1,0 +1,90 @@
+.rainbow-text-fill,
+.rainbow-text-outline,
+.rainbow-text-outline-glow::before,
+.rainbow-text-outline-glow::after {
+  --d: 500px;
+  --angle: 100deg;
+  background-image: repeating-linear-gradient(var(--angle),
+      rgba(255, 0, 0, 1),
+      rgba(255, 154, 0, 1),
+      rgba(208, 222, 33, 1),
+      rgba(79, 220, 74, 1),
+      rgba(63, 218, 216, 1),
+      rgba(47, 201, 226, 1),
+      rgba(28, 127, 238, 1),
+      rgba(95, 21, 242, 1),
+      rgba(186, 12, 248, 1),
+      rgba(251, 7, 217, 1),
+      rgba(255, 0, 0, 1) var(--d));
+  background-size: calc(var(--d)/sin(var(--angle))) 100%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  animation: LinearScroll 4s linear infinite reverse;
+}
+
+.rainbow-text-fill {
+  -webkit-text-fill-color: transparent;
+}
+
+.rainbow-text-outline,
+.rainbow-text-outline-glow {
+  -webkit-text-fill-color: black;
+  position: relative;
+}
+
+.rainbow-text-outline-glow::before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  content: attr(text-contents);
+  -webkit-text-fill-color: transparent;
+  filter: blur(.5rem);
+  z-index: -1;
+  width: 100%;
+}
+
+.rainbow-text-outline-glow::after {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  content: attr(text-contents);
+  color: white;
+  -webkit-text-stroke: 3px transparent;
+  z-index: 1;
+  width: 100%;
+}
+
+.furality-ultra {
+  --d: 500px;
+  --angle: 100deg;
+  background-image: linear-gradient(var(--angle),
+      rgba(71, 222, 255, 1),
+      rgba(145, 224, 64, 1),
+      rgba(237, 128, 240, 1),
+      rgba(255, 166, 0, 1),
+      rgba(255, 212, 0, 1),
+      rgba(71, 222, 255, 1) var(--d));
+  background-size: calc(var(--d)/sin(var(--angle))) 100%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: LinearScroll 4s linear infinite reverse;
+}
+
+
+
+
+
+
+
+@keyframes LinearScroll {
+  0% {
+    background-position: calc(var(--d)/sin(var(--angle))) 0;
+  }
+}
