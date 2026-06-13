@@ -40,23 +40,42 @@ import "../styles/vrc-embed.css";
   <canvas id="background-canvas" width="600px"></canvas>
 
   <body>
-    <div class="glass-backdrop">
-      <canvas id="glass"></canvas>
-      <div class="container">
-        <!-- Header -->
-        <header>
-          <h1>THIS SITE IS UNDER CONSTRUCTION</h1>
-        </header>
+    <div class="contents">
+      <div class="back-button">
+        <a
+          href="../"
+          target=""
+          style="text-decoration: none; color: inherit;"
+        >
+          <div class="solid-outline"></div>
+          <div class="outline"></div>
+          <div class="card-background">
+            <div class="card-content">
+              Back
+            </div>
+          </div>
+        </a>
+      </div>
 
-        <!-- Main Cards -->
-        <main></main>
+      <div class="glass-backdrop">
 
-        <!-- YouTube Section -->
-        <section class="youtube-section">
-          <h2>TowerDynamics - VR Physics-based Tower Defense Game</h2>
-          <div class="video-container">
-            <div class="video-embed">
-              <iframe
+        <canvas id="glass"></canvas>
+        
+        <div class="container">
+          <!-- Header -->
+          <header>
+            <h1>THIS SITE IS UNDER CONSTRUCTION</h1>
+          </header>
+          
+          <!-- Main Cards -->
+          <main></main>
+          
+          <!-- YouTube Section -->
+          <section class="youtube-section">
+            <h2>TowerDynamics - VR Physics-based Tower Defense Game</h2>
+            <div class="video-container">
+              <div class="video-embed">
+                <iframe
                 width="560"
                 height="315"
                 src="https://www.youtube-nocookie.com/embed/qs1AucMNMCo?si=DwI7qXNunrGLs-B4"
@@ -65,24 +84,26 @@ import "../styles/vrc-embed.css";
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen></iframe>
+              </div>
             </div>
-          </div>
-        </section>
-
-        <!--Background Options -->
-        <footer>
-          <div>
-            <input type="checkbox" id="draw-dots" checked />
-            <label for="draw-dots">Draw Dots Board</label>
-
-            <input type="checkbox" id="enable-rotation" checked />
-            <label for="enable-rotation">Enable Animation / Gradients rotation</label>
-
-            <input type="checkbox" id="enable-interaction" checked />
-            <label for="enable-interaction">Enable Interaction</label>
-          </div>
-        </footer>
+          </section>
+          
+          <!--Background Options -->
+          <footer>
+            <div>
+              <input type="checkbox" id="draw-dots" checked />
+              <label for="draw-dots">Draw Dots Board</label>
+              
+              <input type="checkbox" id="enable-rotation" checked />
+              <label for="enable-rotation">Enable Animation / Gradients rotation</label>
+              
+              <input type="checkbox" id="enable-interaction" checked />
+              <label for="enable-interaction">Enable Interaction</label>
+            </div>
+          </footer>
+        </div>
       </div>
     </div>
-  </body>
-</html>
+    </body>
+    </html>
+    

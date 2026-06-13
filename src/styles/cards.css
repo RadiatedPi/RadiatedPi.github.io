@@ -4,10 +4,9 @@ main {
   gap: 0;
 }
 
-.card {
+.card, .back-button {
   border-radius: 17px;
   height: 100%;
-  width: 100%;
   margin-bottom: 25px;
   place-content: center;
   display: block;
@@ -15,6 +14,18 @@ main {
   text-align: center;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.card {
+
+  width: 100%;
+
+}
+
+.back-button {
+  width: fit-content;
+}
+
+
 
 .card .icon {
   width: 56px;
@@ -42,7 +53,7 @@ main {
   transition: filter 0.3s;
 }
 
-.card:hover {
+.card:hover, .back-button:hover {
   transform: translate(3px, 3px);
 }
 
@@ -66,8 +77,8 @@ main {
   filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.8)) brightness(1.2);
 }
 
-.card-outline,
-.card-solid-outline {
+.outline,
+.solid-outline {
   position: absolute;
   width: anchor-size(--card-anchor width);
   height: anchor-size(--card-anchor height);
@@ -79,19 +90,21 @@ main {
   transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.card-solid-outline,
-.card:hover .card-outline {
+.solid-outline,
+.card:hover .outline,
+.back-button:hover .outline {
   opacity: 1;
 }
 
-.card-outline,
-.card:hover .card-solid-outline {
+.outline,
+.card:hover .solid-outline,
+.back-button:hover .solid-outline {
   opacity: 0;
 }
 
-.card-solid-outline::after,
-.card-outline::before,
-.card-outline::after {
+.solid-outline::after,
+.outline::before,
+.outline::after {
   --d: 500px;
   --angle: 100deg;
   content: '';
@@ -102,12 +115,12 @@ main {
   padding: 2px;
 }
 
-.card-solid-outline::after {
+.solid-outline::after {
   background: #d8d8d8;
 }
 
-.card-outline::before,
-.card-outline::after {
+.outline::before,
+.outline::after {
   background: repeating-linear-gradient(var(--angle),
       rgba(255, 0, 0, 1),
       rgba(255, 154, 0, 1),
@@ -124,7 +137,7 @@ main {
   animation: LinearScroll 4s linear infinite reverse;
 }
 
-.card-outline::before {
+.outline::before {
   filter: blur(.5rem);
 }
 
@@ -150,7 +163,7 @@ main {
   grid-column: 2;
 }
 
-.card h2 {
+.card h2, .back-button h2 {
   /*font-family: "AnnonceW01-Regular", sans-serif;*/
   font-family: var(--font-annonce);
   font-size: 17px;
@@ -163,7 +176,7 @@ main {
   transition: all 0.3s;
 }
 
-.card:hover h2 {
+.card:hover h2, .back-button:hover h2 {
   background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -171,14 +184,14 @@ main {
   letter-spacing: 1px;
 }
 
-.card p {
+.card p, .back-button p {
   font-size: 13px;
   color: #bebebe;
   transition: color 0.3s;
   line-height: 1.5;
 }
 
-.card:hover p {
+.card:hover p, .back-button:hover p {
   color: #e0e0e0;
 }
 
